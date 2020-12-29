@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Network.hpp>
 #include <string>
+//g++ portscanner.cpp -lsfml-network -lsfml-system to compile
 
 static bool port_is_open(const std::string& address, int port){
     return (sf::TcpSocket().connect(address, port) == sf::Socket::Done);
