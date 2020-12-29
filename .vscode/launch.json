@@ -1,30 +1,11 @@
 {
-    "name": "C++ Launch",
-    "type": "cppdbg",
-    "request": "launch",
-    "program": "${workspaceFolder}/a.out",
-    "stopAtEntry": false,
-    "customLaunchSetupCommands": [
-      { "text": "target-run", "description": "run target", "ignoreFailures": false }
-    ],
-    "launchCompleteCommand": "exec-run",
-    "linux": {
-      "MIMode": "gdb",
-      "miDebuggerPath": "/usr/bin/gdb"
-    },
-    "osx": {
-      "MIMode": "lldb"
-    },
-    "windows": {
-      "MIMode": "gdb",
-      "miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
-    },
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
     {
-      "name": "(gdb) Launch",
+      "name": "g++ build and debug active file",
       "type": "cppdbg",
       "request": "launch",
-      "program": "enter program name, for example ${workspaceFolder}/a.out",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
@@ -32,14 +13,14 @@
       "externalConsole": false,
       "MIMode": "gdb",
       "setupCommands": [
-          {
-              "description": "Enable pretty-printing for gdb",
-              "text": "-enable-pretty-printing",
-              "ignoreFailures": true
-          }
-      ]
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "g++ build active file",
+      "miDebuggerPath": "/usr/bin/gdb"
     }
-    ]
-  }
-  
-  
+  ]
+}
